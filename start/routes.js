@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-// Route.on('/').render('welcome')
+Route.on('/').render('app')
 Route.get("hello", () => {
     return { greetings: "Hello from backend" };
 }).prefix("api")
@@ -24,4 +24,4 @@ Route.post("post-example", () => {
     return { greetings: "Nice post!" };
 }).prefix("api")
 
-Route.any("*", ({ view }) => view.render('app'))
+// Route.any("*", ({ view }) => view.render('app'))
