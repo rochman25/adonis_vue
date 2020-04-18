@@ -11,7 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+// mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
 
 // Full API
 // mix.js(src, output);
@@ -50,3 +50,20 @@ mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
 //   terser: {}, // Terser-specific options. https://github.com/webpack-contrib/terser-webpack-plugin#options
 //   postCss: [] // Post-CSS options: https://github.com/postcss/postcss/blob/master/docs/plugins.md
 // });
+
+mix.setPublicPath('public').js('resources/assets/js/main.js', 'public/js')
+
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            "@": path.resolve(
+                __dirname,
+                "resources/assets/js"
+            ),
+            "@sass": path.resolve(
+                __dirname,
+                "resources/assets/sass"
+            )
+        }
+    }
+})
