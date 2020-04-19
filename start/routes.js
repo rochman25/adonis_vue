@@ -17,11 +17,13 @@
 const Route = use('Route')
 
 Route.on('/').render('app')
-Route.get("hello", () => {
-    return { greetings: "Hello from backend" };
-}).prefix("api")
-Route.post("post-example", () => {
-    return { greetings: "Nice post!" };
-}).prefix("api")
+Route.get("hello", 'AuthController.index').prefix("api/v1");
+Route.post('/login', 'AuthController.login_action').prefix('api/v1');
+
+
+// Route.group(function() {
+
+// }).prefix("api/v1")
+
 
 // Route.any("*", ({ view }) => view.render('app'))

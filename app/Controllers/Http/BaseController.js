@@ -3,7 +3,7 @@
 class BaseController {
 
     constructor() {
-        this.welcomeMessage = "Hai from API Book_IO(Cuitan Bumi)";
+        this.welcomeMessage = "Hai from API Book_IO";
 
         this.errorMessage = "Something not right";
 
