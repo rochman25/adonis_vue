@@ -21,9 +21,9 @@ Route.get("hello", 'AuthController.index').prefix("api/v1");
 Route.post('/login', 'AuthController.login_action').prefix('api/v1');
 
 
-// Route.group(function() {
-
-// }).prefix("api/v1")
+Route.group(function() {
+    Route.get("/books", 'BookController.index').middleware('auth');
+}).prefix("api/v1")
 
 
 // Route.any("*", ({ view }) => view.render('app'))
