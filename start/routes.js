@@ -26,4 +26,4 @@ Route.group(function() {
 }).prefix("api/v1")
 
 
-// Route.any("*", ({ view }) => view.render('app'))
+Route.any("*", ({ view }) => view.render('app'))
