@@ -22,7 +22,8 @@ Route.post('/login', 'AuthController.login_action').prefix('api/v1');
 
 
 Route.group(function() {
-    Route.get("/books", 'BookController.index').middleware('auth');
+    Route.get("/users", 'UsersController.index');
+    Route.get("/books", 'BookController.index');
 }).prefix("api/v1")
 
 

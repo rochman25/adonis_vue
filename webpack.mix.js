@@ -65,5 +65,15 @@ mix.webpackConfig({
                 "resources/assets/sass"
             )
         }
+    },
+    module: {
+        rules: [{
+            test: /\.jsx?$/,
+            exclude: /node_modules(?!\/@<redacted>)/,
+            use: [{
+                loader: 'babel-loader',
+                options: Config.babel()
+            }]
+        }]
     }
 })
